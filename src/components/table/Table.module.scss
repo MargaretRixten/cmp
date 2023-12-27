@@ -1,0 +1,11 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.table_body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 126px);
+}
