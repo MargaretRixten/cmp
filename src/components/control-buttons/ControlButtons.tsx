@@ -13,6 +13,7 @@ import { defaultRow } from "../../mock/defaultRow.ts";
 import cn from "classnames";
 import { countChildrenById } from "../../utils/countChildrenById.ts";
 import { useMemo } from "react";
+
 interface IControlButtonsProps {
   index: number;
   idRow: number | null;
@@ -29,6 +30,8 @@ export const ControlButtons = ({ index, idRow }: IControlButtonsProps) => {
     if (!outlayList || !idRow) return 0;
     return countChildrenById(outlayList, idRow);
   }, [outlayList, idRow]);
+
+  console.log("countChildren", countChildren, countChildren * 53, "idRow", idRow);
 
   const handleCreateRowInEntity = () => {
     if (!outlayList || isCreated || isUpdated) return;
@@ -57,7 +60,7 @@ export const ControlButtons = ({ index, idRow }: IControlButtonsProps) => {
     <div style={{ marginLeft: `${index * 20}px` }}>
       <div className={styles.icons}>
         <button type="button" className={cn(styles.button, "file")} onClick={handleCreateRowInEntity}>
-          <span className="line-down" style={{ height: `${countChildren * 53}px` }}></span>
+          <span className="line-down" style={{ height: `${countChildren * 59}px` }}></span>
           <span className="line-left"></span>
           <DescriptionIcon />
         </button>
