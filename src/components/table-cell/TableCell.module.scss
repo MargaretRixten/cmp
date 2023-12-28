@@ -14,25 +14,3 @@
     border: none;
   }
 }
-
-.icons {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  padding: 2px;
-  color: #7890B2;
-  &:hover {
-    border-radius: 6px;
-    background: #414144;
-    .trash {
-      display: block;
-    }
-  }
-}
-
-.trash {
-  display: none;
-  color: #DF4444;
-}

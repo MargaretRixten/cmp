@@ -1,47 +1,29 @@
-import { useState } from "react";
 import styles from "./TableCell.module.scss";
-import DescriptionIcon from "@mui/icons-material/Description";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useSelector } from "react-redux";
-import { tableSelector } from "../../store/selectors/table.ts";
+import { selectedIdRowSelector } from "../../store/selectors/outlay.ts";
 
 interface ITableCell {
-  id: number;
-  item: any;
-  level?: boolean;
-  parentIndex: any;
+  id: number | null;
+  name: string;
+  handleChange: (value: string) => void;
+  value: string;
+  error: string;
 }
 
-export const TableCell = ({
-  item,
-  level = false,
-  parentIndex,
-  id,
-}: ITableCell) => {
-  const [value, setValue] = useState(item);
-  const isDisabled = useSelector(tableSelector);
+export const TableCell = ({ value, id, name, handleChange, error }: ITableCell) => {
+  const selectedId = useSelector(selectedIdRowSelector);
 
   return (
     <div className={styles.table_cell}>
-      {level ? (
-        <div
-          style={{ marginLeft: `${parentIndex * 15}px` }}
-          className={styles.icons}
-        >
-          <DescriptionIcon />
-          <div className={styles.trash}>
-            <DeleteIcon />
-          </div>
-        </div>
-      ) : (
-        <input
-          disabled={isDisabled !== id}
-          value={value}
-          onChange={({ target }) => setValue(target.value)}
-          type="text"
-          className={styles.input}
-        />
-      )}
+      <input
+        name={name}
+        value={value}
+        disabled={selectedId !== id}
+        onChange={({ target }) => handleChange(target.value)}
+        type="text"
+        className={styles.input}
+      />
+      <div>{error}</div>
     </div>
   );
 };

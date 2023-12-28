@@ -33,7 +33,7 @@ export const projectsListMock: IProject[] = [
     path: ERoutes.Project,
   },
   {
-    id: 115972,
+    id: 116513,
     label: "СМР",
     name: "Строительно-монтажные работы",
     path: ERoutes.Project,

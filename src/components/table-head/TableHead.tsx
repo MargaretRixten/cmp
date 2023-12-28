@@ -1,7 +1,8 @@
 import styles from "./TableHead.module.scss";
+import { ITableTitle } from "../../mock/tableTitles.ts";
 
 interface ITableHeadProps {
-  tableTitles: any;
+  tableTitles: ITableTitle[];
 }
 
 export const TableHead = ({ tableTitles }: ITableHeadProps) => {

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { tableReducer } from "./redusers/table.ts";
+import { outlayReducer } from "./redusers/outlay.ts";
 
 const rootReducer = combineReducers({
-  table: tableReducer,
+  outlay: outlayReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

@@ -1,9 +1,9 @@
-export interface tableTitle {
+export interface ITableTitle {
   id: number;
   name: string;
 }
 
-export const tableTitles: tableTitle[] = [
+export const tableTitles: ITableTitle[] = [
   {
     id: 1,
     name: "Уровень",
